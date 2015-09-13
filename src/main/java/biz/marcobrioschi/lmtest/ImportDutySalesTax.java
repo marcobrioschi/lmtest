@@ -1,6 +1,6 @@
 package biz.marcobrioschi.lmtest;
 
-public class ImportDutySalesTax implements Tax {
+public class ImportDutySalesTax extends Tax {
 
 	@Override
 	public double calculateTaxAmount(ProductItem currentItem) {

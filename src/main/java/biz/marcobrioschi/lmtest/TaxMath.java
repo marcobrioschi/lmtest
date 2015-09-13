@@ -2,9 +2,9 @@ package biz.marcobrioschi.lmtest;
 
 public class TaxMath {
 
+	// FIXME: Check for use Math.floor(...)
 	public static double calculateRoundedTaxValue(double basePrice, double perc) {
-		// FIXME Auto-generated method stub
-		return 0;
+		return Math.round(basePrice * perc * 20.0)/20.0;
 	}
 	
 }

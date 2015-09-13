@@ -70,7 +70,7 @@ public class BasicSalesTaxTest {
 		
 		BasicSalesTax basicSalesTax = new BasicSalesTax();
 		for (ItemCategory c : ItemCategory.values()) {
-			ProductItem item = new ProductItem(1.0, c, false);
+			ProductItem item = new ProductItem("magic item", 1.0, c, false);
 			basicSalesTax.calculateTaxAmount(item);
 		}
 		

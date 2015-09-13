@@ -2,12 +2,14 @@ package biz.marcobrioschi.lmtest;
 
 public class ProductItem {
 
+	private String itemName;
 	private double basePrice;
 	private ItemCategory category;
 	private boolean imported;
 	private double totalTaxAmount;
 
-	public ProductItem(double basePrice, ItemCategory category, boolean imported) {
+	public ProductItem(String itemName, double basePrice, ItemCategory category, boolean imported) {
+		this.itemName = itemName;
 		this.basePrice = basePrice;
 		this.category = category;
 		this.imported = imported;
@@ -31,8 +33,13 @@ public class ProductItem {
 	}
 
 	public String getReceiptDescription() {
-		// FIXME Auto-generated method stub
-		return null;
+		String receiptDescription;
+		if (this.isImported()) {
+			receiptDescription = "imported " + itemName;
+		} else {
+			receiptDescription = itemName;
+		}
+		return receiptDescription;
 	}
 
 	public double getReceiptPrice() {

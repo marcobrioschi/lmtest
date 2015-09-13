@@ -1,8 +1,7 @@
 package biz.marcobrioschi.lmtest;
 
-public interface Tax {
+public abstract class Tax {
 
-	// FIXME Auto-generated method stub (refactoring separating activation logic???)
-	public double calculateTaxAmount(ProductItem currentItem);
+	public abstract double calculateTaxAmount(ProductItem currentItem);
 
 }

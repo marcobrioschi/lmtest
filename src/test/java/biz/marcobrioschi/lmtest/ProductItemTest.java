@@ -23,7 +23,7 @@ public class ProductItemTest {
 			result = FIXEDFIRSTTAXAMOUNT; 
 		}};
 		
-		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, ItemCategory.book, true);
+		final ProductItem testItem = new ProductItem("magic item", FIXEDBASEPRICE, ItemCategory.book, true);
 		
 		assertEquals("Item start with no tax", 0.0, testItem.getTotalTaxAmount(), 0.0);
 
@@ -51,7 +51,7 @@ public class ProductItemTest {
 			result = FIXEDSECONDTAXAMOUNT;
 		}};
 		
-		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, ItemCategory.other, false);
+		final ProductItem testItem = new ProductItem("special item", FIXEDBASEPRICE, ItemCategory.other, false);
 		
 		assertEquals("Item start with no tax", 0.0, testItem.getTotalTaxAmount(), 0.0);
 
