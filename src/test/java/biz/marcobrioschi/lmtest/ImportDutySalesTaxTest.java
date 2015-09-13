@@ -14,7 +14,7 @@ public class ImportDutySalesTaxTest {
 	@Test
 	public void ImportDutySalesTax_whenTaxLocalItem(
 			@Mocked final ProductItem currentItem,
-			@Mocked final TaxMath _dontuse
+			@Mocked final TaxMath _dontuseme
 			) {
 
 		new Expectations() {{
@@ -38,7 +38,7 @@ public class ImportDutySalesTaxTest {
 	@Test
 	public void ImportDutySalesTax_whenTaxImportedItem(
 			@Mocked final ProductItem currentItem,
-			@Mocked final TaxMath _dontuse
+			@Mocked final TaxMath _dontuseme
 			) {
 		
 		new Expectations() {{

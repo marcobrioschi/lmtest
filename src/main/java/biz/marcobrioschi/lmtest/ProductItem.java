@@ -3,11 +3,13 @@ package biz.marcobrioschi.lmtest;
 public class ProductItem {
 
 	private double basePrice;
+	private ItemCategory category;
 	private boolean imported;
 	private double totalTaxAmount;
 
-	public ProductItem(double basePrice, boolean imported) {
+	public ProductItem(double basePrice, ItemCategory category, boolean imported) {
 		this.basePrice = basePrice;
+		this.category = category;
 		this.imported = imported;
 		this.totalTaxAmount = 0.0;
 	}
@@ -16,6 +18,10 @@ public class ProductItem {
 		return basePrice;
 	}
 	
+	public ItemCategory getCategory() {
+		return category;
+	}
+
 	public boolean isImported() {
 		return imported;
 	}
@@ -36,5 +42,12 @@ public class ProductItem {
 	public void applyTax(Tax currentTax) {
 		totalTaxAmount += currentTax.calculateTaxAmount(this);
 	}
-	
+
+	public enum ItemCategory {
+		book,
+		food,
+		medical,
+		other;
+	}
+
 }

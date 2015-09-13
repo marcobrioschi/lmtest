@@ -8,6 +8,8 @@ import mockit.Verifications;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import biz.marcobrioschi.lmtest.ProductItem.ItemCategory;
+
 @RunWith(mockit.integration.junit4.JMockit.class)
 public class ProductItemTest {
 	
@@ -21,7 +23,7 @@ public class ProductItemTest {
 			result = FIXEDFIRSTTAXAMOUNT; 
 		}};
 		
-		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, true);
+		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, ItemCategory.book, true);
 		
 		assertEquals("Item start with no tax", 0.0, testItem.getTotalTaxAmount(), 0.0);
 
@@ -49,7 +51,7 @@ public class ProductItemTest {
 			result = FIXEDSECONDTAXAMOUNT;
 		}};
 		
-		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, false);
+		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, ItemCategory.other, false);
 		
 		assertEquals("Item start with no tax", 0.0, testItem.getTotalTaxAmount(), 0.0);
 
