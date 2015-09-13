@@ -1,5 +1,8 @@
 package biz.marcobrioschi.lmtest;
 
-public class Tax {
+public interface Tax {
+
+	// FIXME Auto-generated method stub
+	public double calculateTaxAmount(ProductItem currentItem);
 
 }
