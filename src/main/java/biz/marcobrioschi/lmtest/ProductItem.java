@@ -2,10 +2,26 @@ package biz.marcobrioschi.lmtest;
 
 public class ProductItem {
 
+	private double basePrice;
+	private boolean imported;
 	private double totalTaxAmount;
 
-	public ProductItem() {
+	public ProductItem(double basePrice, boolean imported) {
+		this.basePrice = basePrice;
+		this.imported = imported;
 		this.totalTaxAmount = 0.0;
+	}
+
+	public double getBasePrice() {
+		return basePrice;
+	}
+	
+	public boolean isImported() {
+		return imported;
+	}
+
+	public double getTotalTaxAmount() {
+		return totalTaxAmount;
 	}
 
 	public String getReceiptDescription() {
@@ -14,12 +30,7 @@ public class ProductItem {
 	}
 
 	public double getReceiptPrice() {
-		// FIXME Auto-generated method stub
-		return -1.0;
-	}
-
-	public double getTotalTaxAmount() {
-		return totalTaxAmount;
+		return basePrice + totalTaxAmount;
 	}
 
 	public void applyTax(Tax currentTax) {

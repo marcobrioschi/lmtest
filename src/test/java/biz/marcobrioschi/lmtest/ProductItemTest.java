@@ -21,7 +21,7 @@ public class ProductItemTest {
 			result = FIXEDFIRSTTAXAMOUNT; 
 		}};
 		
-		final ProductItem testItem = new ProductItem();
+		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, true);
 		
 		assertEquals("Item start with no tax", 0.0, testItem.getTotalTaxAmount(), 0.0);
 
@@ -32,6 +32,7 @@ public class ProductItemTest {
 		}};
 		
 		assertEquals("Item registered amount of tax", FIXEDFIRSTTAXAMOUNT, testItem.getTotalTaxAmount(), 0.0);
+		assertEquals("Item compose receipt value", FIXEDBASEPRICE + FIXEDFIRSTTAXAMOUNT, testItem.getReceiptPrice(), 0.0);
 		
 	}
 
@@ -48,7 +49,7 @@ public class ProductItemTest {
 			result = FIXEDSECONDTAXAMOUNT;
 		}};
 		
-		final ProductItem testItem = new ProductItem();
+		final ProductItem testItem = new ProductItem(FIXEDBASEPRICE, false);
 		
 		assertEquals("Item start with no tax", 0.0, testItem.getTotalTaxAmount(), 0.0);
 
@@ -61,9 +62,11 @@ public class ProductItemTest {
 		}};
 		
 		assertEquals("Item registered amount of two taxes", FIXEDFIRSTTAXAMOUNT + FIXEDSECONDTAXAMOUNT, testItem.getTotalTaxAmount(), 0.0);
+		assertEquals("Item compose receipt value", FIXEDBASEPRICE + FIXEDFIRSTTAXAMOUNT + FIXEDSECONDTAXAMOUNT, testItem.getReceiptPrice(), 0.0);
 		
 	}
 
+	private static final double FIXEDBASEPRICE = 12.55;
 	private static final double FIXEDFIRSTTAXAMOUNT = 34.12;
 	private static final double FIXEDSECONDTAXAMOUNT = 78.56;
 
