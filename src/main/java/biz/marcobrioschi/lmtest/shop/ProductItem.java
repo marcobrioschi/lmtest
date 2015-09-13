@@ -1,4 +1,6 @@
-package biz.marcobrioschi.lmtest;
+package biz.marcobrioschi.lmtest.shop;
+
+import biz.marcobrioschi.lmtest.tax.Tax;
 
 public class ProductItem {
 

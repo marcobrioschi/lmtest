@@ -1,8 +1,10 @@
-package biz.marcobrioschi.lmtest;
+package biz.marcobrioschi.lmtest.util;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import biz.marcobrioschi.lmtest.util.TaxMath;
 
 public class TaxMathTest {
 

@@ -1,9 +1,10 @@
-package biz.marcobrioschi.lmtest;
+package biz.marcobrioschi.lmtest.shop;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import biz.marcobrioschi.lmtest.Receipt.ReceiptRow;
+import biz.marcobrioschi.lmtest.shop.Receipt.ReceiptRow;
+import biz.marcobrioschi.lmtest.tax.Tax;
 
 public class ShoppingBaskets {
 

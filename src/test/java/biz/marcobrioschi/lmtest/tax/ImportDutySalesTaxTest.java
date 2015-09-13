@@ -1,4 +1,4 @@
-package biz.marcobrioschi.lmtest;
+package biz.marcobrioschi.lmtest.tax;
 
 import static org.junit.Assert.assertEquals;
 import mockit.Expectations;
@@ -7,6 +7,10 @@ import mockit.Verifications;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import biz.marcobrioschi.lmtest.shop.ProductItem;
+import biz.marcobrioschi.lmtest.tax.ImportDutySalesTax;
+import biz.marcobrioschi.lmtest.util.TaxMath;
 
 @RunWith(mockit.integration.junit4.JMockit.class)
 public class ImportDutySalesTaxTest {

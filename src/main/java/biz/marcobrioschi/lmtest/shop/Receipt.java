@@ -1,4 +1,4 @@
-package biz.marcobrioschi.lmtest;
+package biz.marcobrioschi.lmtest.shop;
 
 import java.util.List;
 
