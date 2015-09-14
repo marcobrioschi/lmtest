@@ -5,6 +5,7 @@ import java.util.List;
 
 import biz.marcobrioschi.lmtest.shop.Receipt.ReceiptRow;
 import biz.marcobrioschi.lmtest.tax.Tax;
+import biz.marcobrioschi.lmtest.util.TaxMath;
 
 public class ShoppingBaskets {
 
@@ -30,8 +31,8 @@ public class ShoppingBaskets {
 		double totalPrice = 0.0;
 		
 		for (ProductItem item : items) {
-			salesTaxes += item.getTotalTaxAmount();
-			totalPrice += item.getReceiptPrice();
+			salesTaxes = TaxMath.roundToTaxPrecision(salesTaxes + item.getTotalTaxAmount());
+			totalPrice = TaxMath.roundToTaxPrecision(totalPrice + item.getReceiptPrice());
 			rows.add(
 					new Receipt.ReceiptRow(1, item.getReceiptDescription(), item.getReceiptPrice())
 					);

@@ -1,6 +1,7 @@
 package biz.marcobrioschi.lmtest.shop;
 
 import biz.marcobrioschi.lmtest.tax.Tax;
+import biz.marcobrioschi.lmtest.util.TaxMath;
 
 public class ProductItem {
 
@@ -49,11 +50,11 @@ public class ProductItem {
 	}
 
 	public double getReceiptPrice() {
-		return basePrice + totalTaxAmount;
+		return TaxMath.roundToTaxPrecision(basePrice + totalTaxAmount);
 	}
 
 	public void applyTax(Tax currentTax) {
-		totalTaxAmount += currentTax.calculateTaxAmount(this);
+		totalTaxAmount = TaxMath.roundToTaxPrecision(totalTaxAmount + currentTax.calculateTaxAmount(this));
 	}
 
 	public enum ItemCategory {

@@ -48,7 +48,7 @@ public class TestData {
 
 		assertEquals("book price", 12.49, testReceipt.getRows().get(0).getPrice(), 0.0);
 		assertEquals("music CD price", 16.49, testReceipt.getRows().get(1).getPrice(), 0.0);
-		assertEquals("chocolate bar price", 0.85, testReceipt.getRows().get(1).getPrice(), 0.0);
+		assertEquals("chocolate bar price", 0.85, testReceipt.getRows().get(2).getPrice(), 0.0);
 		
 		assertEquals("Sales Taxes", 1.50, testReceipt.getSalesTaxes(), 0.0);
 		assertEquals("Total", 29.83, testReceipt.getTotalPrice(), 0.0);

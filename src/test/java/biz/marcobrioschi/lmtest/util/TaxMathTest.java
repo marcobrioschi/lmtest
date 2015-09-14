@@ -38,4 +38,16 @@ public class TaxMathTest {
 		
 	}
 	
+	@Test
+	public void TaxMath_whenCheckRoundToTaxPrecision() {
+		assertEquals(12345, TaxMath.roundToTaxPrecision(12345), 0.0);
+		assertEquals(1234.5, TaxMath.roundToTaxPrecision(1234.5), 0.0);
+		assertEquals(123.45, TaxMath.roundToTaxPrecision(123.45), 0.0);
+		assertEquals(12.35, TaxMath.roundToTaxPrecision(12.345), 0.0);
+		assertEquals(1.23, TaxMath.roundToTaxPrecision(1.2345), 0.0);
+		assertEquals(0.12, TaxMath.roundToTaxPrecision(0.12345), 0.0);
+		assertEquals(0.01, TaxMath.roundToTaxPrecision(0.012345), 0.0);
+		assertEquals(0.00, TaxMath.roundToTaxPrecision(0.0012345), 0.0);
+	}
+	
 }

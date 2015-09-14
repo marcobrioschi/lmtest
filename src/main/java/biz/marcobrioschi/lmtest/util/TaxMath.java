@@ -13,4 +13,8 @@ public class TaxMath {
 		return Math.ceil(Math.round(basePrice * perc * 2000.0)/100.0)/20.0;
 	}
 	
+	public static double roundToTaxPrecision(double value) {
+		return Math.round(value * 100.0)/100.0;
+	}
+
 }
