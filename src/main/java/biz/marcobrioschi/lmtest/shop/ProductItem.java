@@ -18,6 +18,10 @@ public class ProductItem {
 		this.totalTaxAmount = 0.0;
 	}
 
+	public String getItemName() {
+		return itemName;
+	}
+
 	public double getBasePrice() {
 		return basePrice;
 	}
