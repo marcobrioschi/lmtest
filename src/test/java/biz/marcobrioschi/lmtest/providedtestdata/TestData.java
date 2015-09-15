@@ -46,6 +46,8 @@ public class TestData {
 		Receipt testReceipt = testShoppingBaskets.generateReceipt();
 		displayReceipt(testReceipt);
 
+		// I created test only for numeric values, not for product description.
+		
 		assertEquals("book price", 12.49, testReceipt.getRows().get(0).getPrice(), 0.0);
 		assertEquals("music CD price", 16.49, testReceipt.getRows().get(1).getPrice(), 0.0);
 		assertEquals("chocolate bar price", 0.85, testReceipt.getRows().get(2).getPrice(), 0.0);
@@ -79,6 +81,8 @@ public class TestData {
 		
 		Receipt testReceipt = testShoppingBaskets.generateReceipt();
 		displayReceipt(testReceipt);
+
+		// I created test only for numeric values, not for product description.
 
 		assertEquals("box of chocolates price", 10.50, testReceipt.getRows().get(0).getPrice(), 0.0);
 		assertEquals("bottle of perfume price", 54.65, testReceipt.getRows().get(1).getPrice(), 0.0);
@@ -120,6 +124,8 @@ public class TestData {
 		
 		Receipt testReceipt = testShoppingBaskets.generateReceipt();
 		displayReceipt(testReceipt);
+
+		// I created test only for numeric values, not for product description.
 
 		assertEquals("bottle of perfume[1] price", 32.19, testReceipt.getRows().get(0).getPrice(), 0.0);
 		assertEquals("bottle of perfume[2] price", 20.89, testReceipt.getRows().get(1).getPrice(), 0.0);

@@ -20,6 +20,7 @@ public class ImportDutySalesTax extends Tax {
 	
 	}
 
+	// In a real case this value can be a configuration
 	private static final double TAXPERC = 0.05;
 	
 }
