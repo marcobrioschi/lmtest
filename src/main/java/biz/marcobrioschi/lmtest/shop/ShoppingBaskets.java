@@ -9,8 +9,8 @@ import biz.marcobrioschi.lmtest.util.TaxMath;
 
 public class ShoppingBaskets {
 
-	List<ProductItem> items;
-	Tax[] taxes;
+	private List<ProductItem> items;
+	private Tax[] taxes;
 	
 	public ShoppingBaskets(Tax... taxes) {
 		this.items = new ArrayList<ProductItem>();

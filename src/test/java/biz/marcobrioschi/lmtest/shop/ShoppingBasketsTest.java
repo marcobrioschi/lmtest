@@ -37,7 +37,7 @@ public class ShoppingBasketsTest {
 			itemB.applyTax(thirdTax);
 		}};
 		
-		assertEquals("Check ShoppingBaskets internal list", 2, currentShoppingBaskets.items.size());
+		assertEquals("Check ShoppingBaskets internal list", 2, currentShoppingBaskets.generateReceipt().getRows().size());
 		
 	}
 	
