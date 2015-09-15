@@ -5,6 +5,12 @@ import biz.marcobrioschi.lmtest.util.TaxMath;
 
 public class ProductItem {
 
+	/*
+	 * Actually unused but I suppose necessary in a real case ...
+	 */
+	@SuppressWarnings("unused")
+	private String id;
+	
 	private String itemName;
 	private double basePrice;
 	private ItemCategory category;
