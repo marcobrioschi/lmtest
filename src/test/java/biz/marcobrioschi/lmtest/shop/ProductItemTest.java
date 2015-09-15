@@ -15,7 +15,7 @@ import biz.marcobrioschi.lmtest.tax.Tax;
 public class ProductItemTest {
 	
 	@Test
-	public void ProductItem_whenApplyOneTax(
+	public void applyTax_whenApplyOneTax(
 			@Mocked final Tax firstTax
 			) {
 		
@@ -40,7 +40,7 @@ public class ProductItemTest {
 	}
 
 	@Test
-	public void ProductItem_whenApplyTwoTaxes(
+	public void applyTax_whenApplyTwoTaxes(
 			@Mocked final Tax firstTax,
 			@Mocked final Tax secondTax
 			) {

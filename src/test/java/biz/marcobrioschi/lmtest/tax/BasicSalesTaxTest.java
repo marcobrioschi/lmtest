@@ -17,7 +17,7 @@ import biz.marcobrioschi.lmtest.util.TaxMath;
 public class BasicSalesTaxTest {
 	
 	@Test
-	public void BasicSalesTaxTest_whenTaxNormalItems(
+	public void calculateTaxAmount_whenTaxNormalItems(
 			@Mocked final ProductItem currentItem,
 			@Mocked final TaxMath _dontuseme
 			) {
@@ -45,7 +45,7 @@ public class BasicSalesTaxTest {
 	}
 	
 	@Test
-	public void BasicSalesTaxTest_whenTaxExemptItems(
+	public void calculateTaxAmount_whenTaxExemptItems(
 			@Mocked final ProductItem currentItem,
 			@Mocked final TaxMath _dontuseme
 			) {
@@ -73,7 +73,7 @@ public class BasicSalesTaxTest {
 	 * the programmer can't forget to manage explicitly the value.
 	 */
 	@Test
-	public void BasicSalesTaxTest_checkEnumCoverage() {
+	public void check_whenPeopleAddEnumValues() {
 		
 		BasicSalesTax basicSalesTax = new BasicSalesTax();
 		for (ItemCategory c : ItemCategory.values()) {

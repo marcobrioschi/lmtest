@@ -12,13 +12,13 @@ import biz.marcobrioschi.lmtest.shop.ShoppingBaskets;
 import biz.marcobrioschi.lmtest.tax.BasicSalesTax;
 import biz.marcobrioschi.lmtest.tax.ImportDutySalesTax;
 
-public class TestData {
+public class ProvidedTestData {
 
 	// Show/Hide provided use cases
 	private static final boolean ENABLECONSOLE = false;
 
 	@Test
-	public void checkTestData1() {
+	public void check_whenDataSet1() {
 
 		ProductItem currentProductItem;
 
@@ -58,7 +58,7 @@ public class TestData {
 	}
 
 	@Test
-	public void checkTestData2() {
+	public void check_whenDataSet2() {
 
 		ProductItem currentProductItem;
 
@@ -93,7 +93,7 @@ public class TestData {
 	}
 
 	@Test
-	public void checkTestData3() {
+	public void check_whenDataSet3() {
 
 		ProductItem currentProductItem;
 

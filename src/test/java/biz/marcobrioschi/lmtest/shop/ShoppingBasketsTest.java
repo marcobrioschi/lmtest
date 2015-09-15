@@ -14,7 +14,7 @@ import biz.marcobrioschi.lmtest.tax.Tax;
 public class ShoppingBasketsTest {
 
 	@Test
-	public void ShoppingBaskets_whenAddItemAddAndApplyTax(
+	public void addProductItem_whenAddItems(
 			@Mocked final ProductItem itemA,
 			@Mocked final ProductItem itemB,
 			@Mocked final Tax firstTax,
@@ -42,7 +42,7 @@ public class ShoppingBasketsTest {
 	}
 	
 	@Test
-	public void ShoppingBaskets_whenCreateReceipt(
+	public void generateReceipt_whenCreateAReceipt(
 			@Mocked final ProductItem itemA,
 			@Mocked final ProductItem itemB,
 			@Mocked final Tax firstTax

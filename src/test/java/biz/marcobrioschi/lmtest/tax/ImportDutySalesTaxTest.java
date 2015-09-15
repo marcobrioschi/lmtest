@@ -16,7 +16,7 @@ import biz.marcobrioschi.lmtest.util.TaxMath;
 public class ImportDutySalesTaxTest {
 
 	@Test
-	public void ImportDutySalesTax_whenTaxLocalItem(
+	public void calculateTaxAmount_whenTaxLocalItem(
 			@Mocked final ProductItem currentItem,
 			@Mocked final TaxMath _dontuseme
 			) {
@@ -40,7 +40,7 @@ public class ImportDutySalesTaxTest {
 	}
 
 	@Test
-	public void ImportDutySalesTax_whenTaxImportedItem(
+	public void calculateTaxAmount_whenTaxImportedItem(
 			@Mocked final ProductItem currentItem,
 			@Mocked final TaxMath _dontuseme
 			) {

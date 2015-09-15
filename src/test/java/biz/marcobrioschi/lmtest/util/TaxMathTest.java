@@ -9,7 +9,7 @@ import biz.marcobrioschi.lmtest.util.TaxMath;
 public class TaxMathTest {
 
 	@Test
-	public void TaxMath_whenCheckCalculateRoundedTaxValue() {
+	public void check_calculateRoundedTaxValue() {
 		
 		assertEquals(0.10, TaxMath.calculateRoundedTaxValue(0.7, 0.1), 0.0);
 		assertEquals(0.10, TaxMath.calculateRoundedTaxValue(0.8, 0.1), 0.0);
@@ -39,7 +39,7 @@ public class TaxMathTest {
 	}
 	
 	@Test
-	public void TaxMath_whenCheckRoundToTaxPrecision() {
+	public void check_roundToTaxPrecision() {
 		assertEquals(12345, TaxMath.roundToTaxPrecision(12345), 0.0);
 		assertEquals(1234.5, TaxMath.roundToTaxPrecision(1234.5), 0.0);
 		assertEquals(123.45, TaxMath.roundToTaxPrecision(123.45), 0.0);
