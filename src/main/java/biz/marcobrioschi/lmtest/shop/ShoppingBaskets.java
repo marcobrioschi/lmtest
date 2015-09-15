@@ -12,6 +12,10 @@ public class ShoppingBaskets {
 	private List<ProductItem> items;
 	private Tax[] taxes;
 	
+	/*
+	 * I assumed that taxes are always known before the construction of
+	 * the shopping baskets and don't change.
+	 */
 	public ShoppingBaskets(Tax... taxes) {
 		this.items = new ArrayList<ProductItem>();
 		this.taxes = taxes;
@@ -29,6 +33,11 @@ public class ShoppingBaskets {
 		List<ReceiptRow> rows = new ArrayList<ReceiptRow>();
 		double salesTaxes = 0.0;
 		double totalPrice = 0.0;
+		
+		/*
+		 * To create a receipt that display a unique row for some identical
+		 * items, it's necessary to add an aggregation step.
+		 */
 		
 		for (ProductItem item : items) {
 			salesTaxes = TaxMath.roundToTaxPrecision(salesTaxes + item.getTotalTaxAmount());

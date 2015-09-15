@@ -1,3 +1,7 @@
+/*
+ * This is only a DTO for data of receipt.
+ */
+
 package biz.marcobrioschi.lmtest.shop;
 
 import java.util.List;

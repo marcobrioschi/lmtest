@@ -69,7 +69,7 @@ public class BasicSalesTaxTest {
 	}
 	
 	/*
-	 * When someone add a value to the enumeration ItemCategory, this test fails so
+	 * When someone add a value to the enumeration ItemCategory this test fails so
 	 * the programmer can't forget to manage explicitly the value.
 	 */
 	@Test
