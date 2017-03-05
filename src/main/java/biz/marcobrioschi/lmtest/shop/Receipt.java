@@ -6,13 +6,15 @@ package biz.marcobrioschi.lmtest.shop;
 
 import java.util.List;
 
+import biz.marcobrioschi.lmtest.util.Money;
+
 public class Receipt {
 	
 	private List<ReceiptRow> rows;
-	private double salesTaxes;
-	private double totalPrice;
+	private Money salesTaxes;
+	private Money totalPrice;
 	
-	public Receipt(List<ReceiptRow> rows, double salesTaxes, double totalPrice) {
+	public Receipt(List<ReceiptRow> rows, Money salesTaxes, Money totalPrice) {
 		this.rows = rows;
 		this.salesTaxes = salesTaxes;
 		this.totalPrice = totalPrice;
@@ -22,11 +24,11 @@ public class Receipt {
 		return rows;
 	}
 
-	public double getSalesTaxes() {
+	public Money getSalesTaxes() {
 		return salesTaxes;
 	}
 
-	public double getTotalPrice() {
+	public Money getTotalPrice() {
 		return totalPrice;
 	}
 
@@ -34,9 +36,9 @@ public class Receipt {
 		
 		private int counter;
 		private String description;
-		private double price;
+		private Money price;
 		
-		public ReceiptRow(int counter, String description, double price) {
+		public ReceiptRow(int counter, String description, Money price) {
 			this.counter = counter;
 			this.description = description;
 			this.price = price;
@@ -50,7 +52,7 @@ public class Receipt {
 			return description;
 		}
 
-		public double getPrice() {
+		public Money getPrice() {
 			return price;
 		}
 

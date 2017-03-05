@@ -1,19 +1,19 @@
 package biz.marcobrioschi.lmtest.tax;
 
 import biz.marcobrioschi.lmtest.shop.ProductItem;
-import biz.marcobrioschi.lmtest.util.TaxMath;
+import biz.marcobrioschi.lmtest.util.Money;
 
 public class ImportDutySalesTax extends Tax {
 
 	@Override
-	public double calculateTaxAmount(ProductItem currentItem) {
+	public Money calculateTaxAmount(ProductItem currentItem) {
 		
-		double taxValue;
+		Money taxValue;
 		
 		if (currentItem.isImported()) {
-			taxValue = TaxMath.calculateRoundedTaxValue(currentItem.getBasePrice(), TAXPERC);
+			taxValue = TaxMath.calculateRoundedTaxValue(currentItem.getPrice(), TAXPERC);
 		} else {
-			taxValue = 0.0;
+			taxValue = Money.ZERO;
 		}
 		
 		return taxValue;

@@ -5,50 +5,71 @@ import java.util.List;
 
 import biz.marcobrioschi.lmtest.shop.Receipt.ReceiptRow;
 import biz.marcobrioschi.lmtest.tax.Tax;
-import biz.marcobrioschi.lmtest.util.TaxMath;
+import biz.marcobrioschi.lmtest.util.Money;
 
 public class ShoppingBaskets {
 
-	private List<ProductItem> items;
-	private Tax[] taxes;
+	/*
+	 * Actually unused but I suppose necessary in a real case ...
+	 */
+	@SuppressWarnings("unused")
+	private String id;
 	
+	private List<ShoppingBasketsItem> items;
+	private Tax[] taxes;
+
 	/*
 	 * I assumed that taxes are always known before the construction of
 	 * the shopping baskets and don't change.
 	 */
 	public ShoppingBaskets(Tax... taxes) {
-		this.items = new ArrayList<ProductItem>();
+		this.items = new ArrayList<ShoppingBasketsItem>();
 		this.taxes = taxes;
 	}
 
-	public void addProductItem(ProductItem item) {
+	public void addProductItem(ProductItem productItem) {
+		Money totalTaxAmount = Money.ZERO;
 		for (Tax currentTax : taxes) {
-			item.applyTax(currentTax);
+			 totalTaxAmount = totalTaxAmount.add(
+					 currentTax.calculateTaxAmount(productItem)
+					 );
 		}
-		items.add(item);
+		ShoppingBasketsItem shoppingBasketsItem = new ShoppingBasketsItem();
+		shoppingBasketsItem.item = productItem;
+		shoppingBasketsItem.taxAmount = totalTaxAmount;
+		items.add(shoppingBasketsItem);
 	}
 
 	public Receipt generateReceipt() {
-		
+
 		List<ReceiptRow> rows = new ArrayList<ReceiptRow>();
-		double salesTaxes = 0.0;
-		double totalPrice = 0.0;
-		
+		Money salesTaxes = Money.ZERO;
+		Money totalPrice = Money.ZERO;
+
 		/*
 		 * To create a receipt that display a unique row for some identical
 		 * items, it's necessary to add an aggregation step.
 		 */
-		
-		for (ProductItem item : items) {
-			salesTaxes = TaxMath.roundToTaxPrecision(salesTaxes + item.getTotalTaxAmount());
-			totalPrice = TaxMath.roundToTaxPrecision(totalPrice + item.getReceiptPrice());
+
+		for (ShoppingBasketsItem item : items) {
+			salesTaxes = salesTaxes.add( item.taxAmount );
+			totalPrice = totalPrice.add( item.taxAmount ).add( item.item.getPrice() );
 			rows.add(
-					new Receipt.ReceiptRow(1, item.getReceiptDescription(), item.getReceiptPrice())
+					new Receipt.ReceiptRow(
+							1,
+							item.item.getReceiptDescription(),
+							item.taxAmount.add( item.item.getPrice() )
+							)
 					);
 		}
-		
+
 		return new Receipt(rows, salesTaxes, totalPrice);
-		
+
+	}
+
+	private class ShoppingBasketsItem {
+		ProductItem item;
+		Money taxAmount;
 	}
 
 }
